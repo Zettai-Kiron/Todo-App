@@ -23,6 +23,15 @@ function App() {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+  // adding the editTodo function
+  const editTodo = (id, newText) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, text: newText } : todo
+      )
+    );
+  };
+
   return (
     <div className="App">
       <h1>Todo List</h1>
